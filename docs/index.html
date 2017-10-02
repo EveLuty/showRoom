@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Luty's Vue components</title>
+  </head>
+  <body>
+    <h1>Custom Checkboxes (Pure CSS):</h1>
+<form>
+  <label>
+    <input type="checkbox" name="check">
+    <span>Item 1</span>
+  </label>
+  <label>
+    <input type="checkbox" name="check">
+    <span>Item 2</span>
+  </label> 
+  <label>
+    <input type="checkbox" name="check" disabled>
+    <span>Item 3</span>
+  </label>
+  <label>
+    <input type="checkbox" name="check">
+    <span>Item 4</span>
+  </label> 
+</form>
+<style>
+/**--- Base ---**/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #eee;
+  padding: 50px;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+}
+h1 {
+  font-size: 1.2em;
+  line-height: 2;
+}
+label {
+  display: block;
+  margin: 5px 0;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+label > input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + span:before {
+  content: "\f096";
+  display: inline-block;
+  margin-right: 5px;
+  font-family: "FontAwesome";
+  font-weight: normal;
+  width: 1em;
+}
+/**--- Checked ---**/
+input[type="checkbox"]:checked + span:before {
+  content: "\f14a";
+  color: #00c853;
+  animation: pop 180ms ease-in;
+}
+/**--- Disabled ---**/
+input[type="checkbox"]:disabled + span {
+  color: #999;
+}
+input[type="checkbox"]:disabled + span:before {
+  content: "\f0c8";
+  color: #999;
+}
+/**--- Animation ---**/
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style>
+  </body>
+</html>
